@@ -1,0 +1,10 @@
+# Node, environment and editor ignores
+node_modules/
+.env
+.DS_Store
+.vscode/
+/.firebase
+dist/
+build/
+# OS files
+Thumbs.db
