@@ -1,0 +1,136 @@
+
+.navbar {
+    text-align: right;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:larger;
+    padding-right: 60px;
+    
+}
+
+
+.navbar a{
+    color:#FBFBFB
+
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color:#130A02
+}
+
+.button {
+    background-color: #8b1824;
+    color: white;
+    padding: 40px 150px;
+    border: none;
+    font-size:30px;
+    border-radius :10px;
+    cursor: pointer;
+    margin:5px;
+  }
+  
+  hr {
+    height: 20px;
+    background-color: #8b1824;
+}
+
+
+.navbar a.button1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8b1824; /* Blue background */
+    text-decoration: none;     /* No underline */
+    border-radius: 5px;        /* Rounded corners */
+    margin: 5px;               /* Space around buttons */
+  }
+
+  h1{
+    text-align:center;
+    font-size:50px;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+}
+
+/* Run list styling (runreport.html) */
+#buttonContainer,
+#runButtonsContainer {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 16px;
+}
+
+.run-entry {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.run-entry button.run-date {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #e6e6e6;
+    background: #ffffff;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 600;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.run-entry button.run-date:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.run-entry button.delete-button {
+    margin-left: 8px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: #c22;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .run-entry { gap: 6px; }
+    .run-entry button.run-date { font-size: 14px; }
+}
+
+/* Modal (Add Run) styles appended by Copilot */
+.add-run-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.45);
+    z-index: 9999;
+}
+.add-run-form {
+    background: #fff;
+    padding: 18px;
+    border-radius: 10px;
+    width: 340px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    font-family: inherit;
+}
+.add-run-form h3 { margin-top: 0; margin-bottom: 8px; }
+.add-run-form label { display:block; font-size:14px; margin-bottom:8px; }
+.add-run-form input { width:100%; padding:8px 10px; border:1px solid #e6e6e6; border-radius:6px; box-sizing:border-box; }
+.add-run-form .modal-actions { display:flex; justify-content:flex-end; gap:8px; margin-top:12px; }
+.add-run-form button { padding:8px 12px; border-radius:6px; border:none; cursor:pointer; }
+.add-run-form button#cancelAdd { background:transparent; color:#333; border:1px solid #ddd; }
+.add-run-form button[type="submit"] { background:#8b1824; color:#fff; }
+
+@media (max-width:420px) {
+    .add-run-form { width:92%; padding:14px; }
+}
