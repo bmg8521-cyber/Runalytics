@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Run Data Graphs</title>
+  <link rel="stylesheet" href="progress.css">
+</head>
+<body>
+  <h1>Runalytics Dashboard</h1>
+  <hr>
+  <nav class="navbar">
+    <a href="runreport.html" class="button1">Run Report</a>   
+    <a href="progress.html" class="button1">Progress</a>
+    </nav>
+ 
+
+   <div id="chartsContainer" style="display: grid; gap: 20px; padding: 20px;">
+  <canvas id="calcVO2Chart" width="100" height="50"></canvas>
+  <canvas id="rpeChart"width="100"  height="50"></canvas>
+  <canvas id="runningEffChart" width="100" height="50"></canvas>
+
+ </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="firebase.js"></script>
+</body>
+</html>

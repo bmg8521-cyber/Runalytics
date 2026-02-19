@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+        
+<link rel="stylesheet" href="runreport.css">
+
+
+<title> Runalytics </title>
+
+<style>
+    body{
+        background-color: #FBFBFB;
+    }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="run-report-page">
+<h1>Runalytics</h1>
+    <hr>
+    
+    <br>
+
+   <nav class="navbar">
+    <a href="runreport.html" class="button1">Run Report</a>   
+    <a href="progress.html" class="button1">Progress</a>
+        
+       
+
+    </nav> 
+    <hr> 
+    <button class="button" button id ="addBtn">+</button>
+    <div id="buttonContainer"></div>
+
+
+    <script type="module" src="firebase.js"></script>
+
+        <!-- Inline Add Run Modal (used by firebase.js if present) -->
+        <div id="addRunOverlay" class="add-run-overlay" style="display:none">
+            <form id="addRunForm" class="add-run-form">
+                <h3>Add Run</h3>
+                <label>Date (MM/DD/YYYY)<br><input name="date" required placeholder="MM/DD/YYYY"></label>
+                <label>Distance (miles)<br><input name="miles" required inputmode="decimal" placeholder="e.g. 3.1"></label>
+                <label>Pace (m:ss)<br><input name="pace" required placeholder="e.g. 8:30"></label>
+                <label>RPE (1-10)<br><input name="rpe" required inputmode="numeric" placeholder="6"></label>
+                <label>Duration (minutes)<br><input name="time" required inputmode="decimal" placeholder="45"></label>
+                <label>Resting HR (bpm)<br><input name="hrRest" required inputmode="numeric" placeholder="60"></label>
+                <label>Max HR (bpm)<br><input name="hrMax" required inputmode="numeric" placeholder="180"></label>
+                <label>Average HR (bpm)<br><input name="avgHR" required inputmode="numeric" placeholder="150"></label>
+                <div class="modal-actions">
+                    <button type="button" id="cancelAdd">Cancel</button>
+                    <button type="submit">Save Run</button>
+                </div>
+            </form>
+        </div>
+
+</body>
+</html>
