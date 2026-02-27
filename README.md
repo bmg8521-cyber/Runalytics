@@ -3,17 +3,17 @@
 Runalytics is a lightweight, client‑side running tracker that helps recreational and competitive runners record workouts, visualize trends, and estimate physiological metrics (VO2 and running efficiency) without requiring a server‑side database. It pairs secure user sign‑in (Firebase Auth) with local, per‑user storage and Chart.js visualizations.
 
 **Project Vision**
-- **Problem:** Many runners want a private, inexpensive way to track workouts.
+- **Problem:** Runners want a private, inexpensive way to track workouts.
 - **Why this approach:** A local client app provides privacy and immediacy while still allowing a simple authentication layer (Firebase Auth) so users can keep runs separated by account.
 
 **System Architecture**
 - **Frontend:** Static HTML/CSS/JS served via GitHub Pages. Core pages: `signup.html`, `login.html`, `runreport.html` (run list + add modal), and `progress.html` (charts).
 - **Auth:** Firebase Authentication handles signup/login flows. On successful auth the app stores `currentUID` in `localStorage`.
-- **Storage:** `localStorage` stores runs under the key `runData_<uid>` (object containing parallel arrays). No server DB is used for run records.
+- **Storage:** `localStorage`, no server data base is used for run records.
 - **Visualization:** Chart.js renders time series charts on `progress.html`.
 - **Deployment:** GitHub Pages (branch `gh-pages`) hosts the static assets.
 
-**Model‑View‑Controller (MVC) — logical mapping**
+**Model‑View‑Controller**
 - **Model:** `localStorage` object `runData_<uid>` (parallel arrays for dates, miles, pace, rpe, time, hrRest, hrMax, avgHR, calcVO2, runningEff).
 - **View:** HTML pages and Chart.js charts.
 - **Controller:** `firebase.js` — mediates auth, input validation, calculations, storage updates, and chart re-rendering.
@@ -24,7 +24,7 @@ Runalytics is a lightweight, client‑side running tracker that helps recreation
 - **Storage:** Browser `localStorage` for per‑user persistence. Tradeoff: no centralized backup or cross-device sync; benefit: privacy, zero server costs.
 - **Hosting:** GitHub Pages — ideal for static apps, free HTTPS and CI compatibility.
 
-**Key Algorithms & Complexity**
+**Key Algorithms**
 - **Parsing pace (m:ss → decimal minutes):** O(1) per input, constant work to split and convert.
 - **Adding a run (`handleRunFormSubmission`):** O(1) work per field; then `saveUserRunData` performs a sort by date:
   - Combine parallel arrays into objects and sort by `Date` — sorting is O(n log n) for n runs.
@@ -35,8 +35,7 @@ Runalytics is a lightweight, client‑side running tracker that helps recreation
 
 **Installation**
 You do not need Node or Anaconda to run it locally.
-1. Open https://github.com/bmg8521-cyber/Runalytics.git in your browser
-
+- Open https://github.com/bmg8521-cyber/Runalytics.git in your browser
 
 **Challenges & Iterations (Development History)**
 - **VO2 consistency:** Multiple VO2 formulas were present; consolidated to the Uth heart‑rate method (`calcVO2 = 15.3 * HRmax/HRrest`). Implemented recompute on load to sanitize historic entries.
@@ -45,5 +44,4 @@ You do not need Node or Anaconda to run it locally.
 
 **Security & Privacy Notes**
 - Authentication: Firebase Auth only handles sign‑in. Credentials are not stored in the repo.
-
 - Data privacy: Runs are stored locally per user.
